@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AccessiRoute | Accessible Transit Finder</title>
+  <meta name="description" content="Accessible public transit route planner for wheelchair users, senior citizens, and low-vision commuters across Indian transit systems." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header with Brand + High Contrast Toggle -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">♿</span>
+        <div>
+          <h1 class="brand-name">AccessiRoute</h1>
+          <p class="brand-sub">Accessible Transit Finder • Hyderabad Pilot</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="hc-toggle" class="btn btn-secondary" aria-pressed="false" aria-label="Toggle High Contrast Mode">
+          🌓 High Contrast
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+    <!-- Planner Card Section -->
+    <section class="card planner-card" aria-labelledby="planner-heading">
+      <h2 id="planner-heading" class="card-title">Plan Your Accessible Journey</h2>
+      <p class="card-desc">Find routes scored by wheelchair ramps, functional lifts, low-floor transit, and tactile paving.</p>
+
+      <form id="planner-form" class="planner-form" onsubmit="return false;">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="select-from" class="form-label">Origin (From)</label>
+            <select id="select-from" class="form-select" required aria-required="true">
+              <!-- Dynamically populated from PLACES -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="select-to" class="form-label">Destination (To)</label>
+            <select id="select-to" class="form-select" required aria-required="true">
+              <!-- Dynamically populated from PLACES -->
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="needs-fieldset">
+          <legend class="needs-legend">My Accessibility Needs:</legend>
+          <div class="chips-container" role="group" aria-label="Accessibility needs checkboxes">
+            <label class="chip-item">
+              <input type="checkbox" id="need-wheelchair" name="needs" value="wheelchair" />
+              <span>♿ Wheelchair User (Ramps & Lifts)</span>
+            </label>
+            <label class="chip-item">
+              <input type="checkbox" id="need-elderly" name="needs" value="elderly" />
+              <span>🧓 Senior Citizen (Low-floor & Minimal Stairs)</span>
+            </label>
+            <label class="chip-item">
+              <input type="checkbox" id="need-lowvision" name="needs" value="lowvision" />
+              <span>🦯 Low Vision (Tactile Paving & Audio)</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="button" id="btn-find" class="btn btn-primary btn-block">
+          🔍 Find Accessible Routes
+        </button>
+      </form>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-wrapper" aria-labelledby="results-heading" aria-live="polite">
+      <div class="results-header">
+        <h2 id="results-heading" class="results-title">Available Routes</h2>
+        <span id="results-count" class="results-count">0 routes found</span>
+      </div>
+
+      <div id="results-container" class="results-container">
+        <!-- Route cards dynamically populated by script.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Gate Details Modal (Hidden by Default) -->
+  <div id="gate-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-title" class="modal-title">Station Gate & Facility Details</h3>
+        <button id="modal-close-btn" class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div id="modal-content" class="modal-body">
+        <!-- Injected via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <p><strong>AccessiRoute</strong> • Built for WarriorHacks 2.0 (Westwood CS Club)</p>
+      <p class="footer-sub">Empowering inclusive mobility across Indian cities • Hyderabad Transit Pilot</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
