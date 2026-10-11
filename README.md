@@ -3,7 +3,10 @@
 > **WarriorHacks 2.0 Submission**  
 > [![Hackathon](https://img.shields.io/badge/Hackathon-WarriorHacks_2.0-blue)](https://warriorhacks.org)
 > [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-> [![Tech](https://img.shields.io/badge/Made%20with-Vanilla%20JS%20%7C%20HTML5%20%7C%20CSS3-success)]()
+> [![Tech](https://img.shields.io/badge/Made%20with-Vanilla%20JS%20%7C%20HTML5%20%7C%20CSS3-success)]()  
+> 🌐 **Live Demo**: [https://accessiroute.vercel.app](https://accessiroute.vercel.app)  
+> 🎥 **Video Demo**: [Watch 2-3 Min Walkthrough](https://drive.google.com/file/d/11vGytNLG3FYZ6ykktw6b99y7p4HUL0Mk/view?usp=sharing)  
+> 📂 **GitHub Repo**: [https://github.com/Ashutoshranjan195/accessiroute](https://github.com/Ashutoshranjan195/accessiroute)
 
 **AccessiRoute** is an accessibility-first public transit finder built for wheelchair users, senior citizens, and low-vision commuters across Indian urban transit networks (Hyderabad Transit Pilot).
 
